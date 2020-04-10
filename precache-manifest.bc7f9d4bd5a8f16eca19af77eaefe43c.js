@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "55209e43c5debad4690d11a809a89630",
+    "revision": "c6b51f65e89930a0a1b652c523aaf535",
     "url": "/duden-app/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/duden-app/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "c01760e91bc7f1146ff9",
-    "url": "/duden-app/static/css/main.84960ab6.chunk.css"
+    "revision": "d8eae7104dcbfe8e5c6e",
+    "url": "/duden-app/static/css/main.a75b2bdb.chunk.css"
   },
   {
     "revision": "4e7b4e5b817f0d40b125",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/duden-app/static/js/2.3db6b4c3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c01760e91bc7f1146ff9",
+    "revision": "d8eae7104dcbfe8e5c6e",
     "url": "/duden-app/static/js/main.52c3cec4.chunk.js"
   },
   {
