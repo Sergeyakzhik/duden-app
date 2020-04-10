@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/duden-app/static/css/main.a75b2bdb.chunk.css",
+    "main.css": "/duden-app/static/css/main.cf37601c.chunk.css",
     "main.js": "/duden-app/static/js/main.52c3cec4.chunk.js",
     "main.js.map": "/duden-app/static/js/main.52c3cec4.chunk.js.map",
     "runtime-main.js": "/duden-app/static/js/runtime-main.8b8b14ff.js",
@@ -9,17 +9,17 @@
     "static/js/2.3db6b4c3.chunk.js": "/duden-app/static/js/2.3db6b4c3.chunk.js",
     "static/js/2.3db6b4c3.chunk.js.map": "/duden-app/static/js/2.3db6b4c3.chunk.js.map",
     "index.html": "/duden-app/index.html",
-    "precache-manifest.40437177ed9ffae43ee96c5c83ce7b4e.js": "/duden-app/precache-manifest.40437177ed9ffae43ee96c5c83ce7b4e.js",
+    "precache-manifest.39826067d3211fcb90b5661a7d24d163.js": "/duden-app/precache-manifest.39826067d3211fcb90b5661a7d24d163.js",
     "service-worker.js": "/duden-app/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/duden-app/static/css/2.de424728.chunk.css.map",
-    "static/css/main.a75b2bdb.chunk.css.map": "/duden-app/static/css/main.a75b2bdb.chunk.css.map",
+    "static/css/main.cf37601c.chunk.css.map": "/duden-app/static/css/main.cf37601c.chunk.css.map",
     "static/js/2.3db6b4c3.chunk.js.LICENSE.txt": "/duden-app/static/js/2.3db6b4c3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8b8b14ff.js",
     "static/css/2.de424728.chunk.css",
     "static/js/2.3db6b4c3.chunk.js",
-    "static/css/main.a75b2bdb.chunk.css",
+    "static/css/main.cf37601c.chunk.css",
     "static/js/main.52c3cec4.chunk.js"
   ]
 }
