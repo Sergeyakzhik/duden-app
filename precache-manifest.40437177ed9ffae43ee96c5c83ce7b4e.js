@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c6b51f65e89930a0a1b652c523aaf535",
+    "revision": "55e5ec820c10fa6c0a91578847d74c6d",
     "url": "/duden-app/index.html"
   },
   {
