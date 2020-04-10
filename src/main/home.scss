@@ -1,14 +1,22 @@
+html, body, #root {
+    height: 100%;
+}
+
+body {
+    background-image: linear-gradient(to top, #00eeff87, #00eeff87);
+}
+
 .container.main-container {
-    height: 100vh;
-    background-image: linear-gradient(to top, #e0f5ff, #00ffb2);
+    height: 100%;
     padding-right: 0;
     padding-left: 0;
 
     .words-list {
-        max-height: calc(100vh - 58px);
+        height: 100%;
         overflow-y: scroll;
         overflow-x: hidden;
         padding: 10px;
+        padding-bottom: 68px;
 
         .word-card {
             width: 100%;
@@ -40,7 +48,7 @@
     }
 
     .input-wrapper {
-        position: absolute;
+        position: fixed;
         width: 100%;
         bottom: 0;
         left: 0;
