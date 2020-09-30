@@ -5,28 +5,37 @@ import Home from './Home';
 import Duden from '../api';
 
 const HomeContainer = () => {
+    const [loading, setLoading] = useState(false);
     const [value, setValue] = useState('');
+    const [requestTimeout, setRequestTimeout] = useState(null);
     const [wordsList, setWordsList] = useState([]);
-    const [wordsData, setWordsData] = useState([]);
+    const [wordsData, setWordsData] = useState({});
     const [expandedWords, setExpandedWords] = useState([]);
 
-    //create object to store [title]: of words from autocomplete and don't load their info if there's no need in it
+    //TODO: create object to store [title]: of words from autocomplete and don't load their info if there's no need in it
 
     useEffect(() => {
         if (value.length > 3) {
-            (async () => {
-                const response = await Duden.getAutocompleteList(value);
-                const result = await response.json();
+            clearTimeout(requestTimeout);
+            setRequestTimeout(
+                setTimeout(async () => {
+                    setLoading(true);
 
-                setWordsList(result.slice(0, 5).map(item => item.value.split('/').reverse()[0]));
-            })();
+                    const response = await Duden.getAutocompleteList(value);
+                    const result = await response.json();
+    
+                    setWordsList(result.slice(0, 5).map(item => item.value.split('/').reverse()[0]));
+
+                    setLoading(false);
+                }, 500)
+            );
         }
     }, [value]);
 
     useEffect(() => {
         if (wordsList.length) {
             (async () => {
-                const responseArr = await Promise.all(wordsList.map(item => Duden.getWordPage(item)));
+                const responseArr = await Promise.all(wordsList.filter(item => !wordsData[item]).map(item => Duden.getWordPage(item)));
                 const resultArr = await Promise.all(responseArr.map(item => item.text()));
                 const documents = resultArr.map(item => $(item));
                 const titles = documents.map(item => item.find('.lemma__title').text());
@@ -34,7 +43,17 @@ const HomeContainer = () => {
 
                 meanings = meanings.map(item => item.map((i, el) => el.innerText));
 
-                setWordsData(wordsList.map((item, ind) => ({ title: titles[ind], meanings: meanings[ind] })));
+                const data = {};
+
+                wordsList.forEach((item, ind) => {
+                    if (!wordsData[item]) {
+                        data[item] = { title: titles[ind], meanings: meanings[ind] };
+                    } else {
+                        data[item] = wordsData[item];
+                    }
+                });
+
+                setWordsData(data);
             })();
         }
     }, [wordsList]);
@@ -57,7 +76,14 @@ const HomeContainer = () => {
     };
 
     return (
-        <Home wordsList={wordsList} wordsData={wordsData} expandedWords={expandedWords} onInputChange={handleInputChange} onWordClick={handleWordClick} />
+        <Home
+            loading={loading}
+            wordsList={wordsList} 
+            wordsData={wordsData} 
+            expandedWords={expandedWords} 
+            onInputChange={handleInputChange} 
+            onWordClick={handleWordClick} 
+        />
     );
 };
 
