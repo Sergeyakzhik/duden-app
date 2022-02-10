@@ -10,7 +10,7 @@
     "cross-fetch": "^3.0.4",
     "duden-search-api": "^1.0.7",
     "jquery": "^3.4.1",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
